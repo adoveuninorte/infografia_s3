@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infografía: Innovación Pública con Conocimiento - MIPG v7</title>
+<style>
+  /* ========== RESET Y VARIABLES ========== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --azul-oscuro: #1B3A5C;
+    --azul-medio: #2E6DA4;
+    --azul-claro: #E8F0F8;
+    --verde: #27AE60;
+    --verde-claro: #E8F8EF;
+    --naranja: #E67E22;
+    --naranja-claro: #FDF2E9;
+    --rojo: #C0392B;
+    --rojo-claro: #FDEDEC;
+    --morado: #7D3C98;
+    --morado-claro: #F4ECF7;
+    --gris-claro: #F5F6FA;
+    --gris-medio: #D5DBDB;
+    --gris-texto: #566573;
+    --blanco: #FFFFFF;
+    --sombra: 0 4px 15px rgba(0,0,0,0.08);
+    --sombra-hover: 0 6px 25px rgba(0,0,0,0.15);
+    --radio: 12px;
+  }
+
+  body {
+    font-family: 'Segoe UI', 'Open Sans', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+    color: var(--gris-texto);
+    line-height: 1.6;
+    padding: 20px;
+  }
+
+  /* ========== CONTENEDOR PRINCIPAL ========== */
+  .infografia {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--blanco);
+    border-radius: var(--radio);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    overflow: hidden;
+  }
+
+  /* ========== ENCABEZADO ========== */
+  .header {
+    background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-medio) 100%);
+    color: var(--blanco);
+    padding: 50px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 250px;
+    height: 250px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+
+  .header-icon {
+    font-size: 56px;
+    margin-bottom: 15px;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header h1 {
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header .subtitulo {
+    font-size: 1.05em;
+    opacity: 0.92;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header .badge-mipg {
+    display: inline-block;
+    background: var(--naranja);
+    color: var(--blanco);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 700;
+    margin-top: 15px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ========== SECCIONES ========== */
+  .seccion {
+    padding: 35px 40px;
+    border-bottom: 1px solid var(--gris-medio);
+    position: relative;
+  }
+
+  .seccion:last-child {
+    border-bottom: none;
+  }
+
+  .seccion-titulo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .seccion-titulo .num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: var(--blanco);
+    font-weight: 800;
+    font-size: 1.05em;
+    flex-shrink: 0;
+  }
+
+  .seccion-titulo h2 {
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+    font-size: 1.35em;
+    font-weight: 800;
+    color: var(--azul-oscuro);
+  }
+
+  /* Colores por sección */
+  .s-contexto .num { background: var(--azul-medio); }
+  .s-problema .num { background: var(--rojo); }
+  .s-estado .num { background: var(--morado); }
+  .s-objetivo .num { background: var(--verde); }
+  .s-propuesta .num { background: var(--naranja); }
+  .s-proceso .num { background: var(--azul-oscuro); }
+  .s-resultados .num { background: var(--verde); }
+
+  /* ========== TARJETAS Y COMPONENTES ========== */
+  .card {
+    background: var(--gris-claro);
+    border-radius: var(--radio);
+    padding: 20px;
+    margin-bottom: 15px;
+    border-left: 5px solid var(--azul-medio);
+  }
+
+  .card.verde { border-left-color: var(--verde); background: var(--verde-claro); }
+  .card.naranja { border-left-color: var(--naranja); background: var(--naranja-claro); }
+  .card.rojo { border-left-color: var(--rojo); background: var(--rojo-claro); }
+  .card.morado { border-left-color: var(--morado); background: var(--morado-claro); }
+
+  .card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--azul-oscuro);
+    margin-bottom: 8px;
+  }
+
+  .card p {
+    font-size: 0.92em;
+    color: var(--gris-texto);
+  }
+
+  /* ========== GRID ========== */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  /* ========== TABLAS ========== */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88em;
+    margin: 15px 0;
+    border-radius: var(--radio);
+    overflow: hidden;
+    box-shadow: var(--sombra);
+  }
+
+  thead {
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+  }
+
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    font-weight: 700;
+    font-size: 0.9em;
+    letter-spacing: 0.3px;
+  }
+
+  tbody tr:nth-child(even) {
+    background: var(--gris-claro);
+  }
+
+  tbody tr:hover {
+    background: var(--azul-claro);
+    transition: background 0.2s ease;
+  }
+
+  /* ========== DATOS DESTACADOS ========== */
+  .dato-destacado {
+    text-align: center;
+    padding: 18px 12px;
+    background: var(--blanco);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    border-top: 4px solid var(--azul-medio);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .dato-destacado:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-hover);
+  }
+
+  .dato-destacado .valor {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    font-weight: 900;
+    color: var(--azul-oscuro);
+    display: block;
+    line-height: 1.1;
+  }
+
+  .dato-destacado .etiqueta {
+    font-size: 0.78em;
+    color: var(--gris-texto);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 5px;
+    display: block;
+  }
+
+  /* ========== BADGES Y PILLS ========== */
+  .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    margin: 2px;
+  }
+
+  .badge-azul { background: var(--azul-claro); color: var(--azul-oscuro); }
+  .badge-verde { background: var(--verde-claro); color: var(--verde); }
+  .badge-naranja { background: var(--naranja-claro); color: var(--naranja); }
+  .badge-rojo { background: var(--rojo-claro); color: var(--rojo); }
+  .badge-morado { background: var(--morado-claro); color: var(--morado); }
+
+  /* ========== LISTAS ========== */
+  ul.lista-estilizada {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul.lista-estilizada li {
+    padding: 8px 0 8px 30px;
+    position: relative;
+    font-size: 0.9em;
+    border-bottom: 1px dashed var(--gris-medio);
+  }
+
+  ul.lista-estilizada li:last-child {
+    border-bottom: none;
+  }
+
+  ul.lista-estilizada li::before {
+    content: '▸';
+    position: absolute;
+    left: 8px;
+    color: var(--azul-medio);
+    font-weight: 700;
+  }
+
+  /* ========== COMPARATIVA ========== */
+  .comparativa {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-radius: var(--radio);
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    margin: 15px 0;
+  }
+
+  .comparativa > div {
+    padding: 18px;
+  }
+
+  .comparativa .tradicional {
+    background: #FADBD8;
+  }
+
+  .comparativa .innovadora {
+    background: #D5F5E3;
+  }
+
+  .comparativa h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95em;
+    font-weight: 800;
+    margin-bottom: 12px;
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+  }
+
+  .comparativa .tradicional h4 { color: var(--rojo); }
+  .comparativa .innovadora h4 { color: var(--verde); }
+
+  .comparativa ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .comparativa ul li {
+    padding: 6px 0;
+    font-size: 0.85em;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .comparativa .tradicional ul li::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: var(--rojo);
+    font-weight: 700;
+  }
+
+  .comparativa .innovadora ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--verde);
+    font-weight: 700;
+  }
+
+  /* ========== PROCESO / FLUJO ========== */
+  .proceso-flujo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 15px 0;
+  }
+
+  .fase {
+    flex: 1 1 120px;
+    min-width: 100px;
+    max-width: 160px;
+    background: var(--blanco);
+    border-radius: 10px;
+    padding: 14px 10px;
+    text-align: center;
+    box-shadow: var(--sombra);
+    border-top: 4px solid var(--azul-medio);
+    transition: transform 0.2s ease;
+    position: relative;
+  }
+
+  .fase:hover {
+    transform: translateY(-3px);
+  }
+
+  .fase .fase-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--azul-medio);
+    color: var(--blanco);
+    font-size: 0.75em;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+
+  .fase .fase-titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78em;
+    font-weight: 700;
+    color: var(--azul-oscuro);
+    line-height: 1.3;
+  }
+
+  /* ========== EJES ========== */
+  .eje {
+    background: var(--blanco);
+    border-radius: var(--radio);
+    padding: 20px;
+    box-shadow: var(--sombra);
+    border-top: 5px solid;
+    transition: transform 0.2s ease;
+  }
+
+  .eje:hover {
+    transform: translateY(-3px);
+  }
+
+  .eje-1 { border-top-color: var(--azul-medio); }
+  .eje-2 { border-top-color: var(--naranja); }
+  .eje-3 { border-top-color: var(--verde); }
+
+  .eje h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    font-weight: 800;
+    color: var(--azul-oscuro);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .eje h4 .eje-icon {
+    font-size: 1.3em;
+  }
+
+  .eje p {
+    font-size: 0.82em;
+    line-height: 1.5;
+  }
+
+  /* ========== RESULTADOS ========== */
+  .resultado-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: var(--blanco);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    margin-bottom: 10px;
+  }
+
+  .resultado-item .icono {
+    font-size: 1.5em;
+    flex-shrink: 0;
+  }
+
+  .resultado-item .texto {
+    font-size: 0.85em;
+  }
+
+  .resultado-item .texto strong {
+    color: var(--azul-oscuro);
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95em;
+  }
+
+  /* ========== FOOTER / DATOS ========== */
+  .footer-datos {
+    background: linear-gradient(135deg, var(--azul-oscuro) 0%, #2C5282 100%);
+    color: var(--blanco);
+    padding: 30px 40px;
+    text-align: center;
+  }
+
+  .footer-datos h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-datos .datos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    font-size: 0.88em;
+  }
+
+  .footer-datos .datos-grid div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-datos .datos-grid .label {
+    font-size: 0.7em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    margin-bottom: 4px;
+  }
+
+  .footer-datos .datos-grid .value {
+    font-weight: 700;
+  }
+
+  /* ========== REFERENCIAS ========== */
+  .referencias {
+    padding: 25px 40px;
+    background: var(--gris-claro);
+    font-size: 0.78em;
+    color: var(--gris-texto);
+  }
+
+  .referencias h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85em;
+    font-weight: 800;
+    color: var(--azul-oscuro);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .referencias p {
+    margin-bottom: 6px;
+    padding-left: 15px;
+    text-indent: -15px;
+    line-height: 1.5;
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    body { padding: 10px; }
+
+    .header { padding: 30px 20px; }
+    .header h1 { font-size: 1.5em; }
+    .header .subtitulo { font-size: 0.9em; }
+
+    .seccion { padding: 25px 20px; }
+    .seccion-titulo h2 { font-size: 1.1em; }
+
+    .grid-2, .grid-3, .grid-4 {
+      grid-template-columns: 1fr;
+    }
+
+    .comparativa {
+      grid-template-columns: 1fr;
+    }
+
+    .proceso-flujo {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .fase {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .footer-datos .datos-grid {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    table { font-size: 0.78em; }
+    th, td { padding: 8px 10px; }
+  }
+
+  /* ========== ANIMACIONES ========== */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .seccion {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  /* ========== PRINT ========== */
+  @media print {
+    body { background: white; padding: 0; }
+    .infografia { box-shadow: none; }
+    .seccion { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="infografia">
+
+  <!-- ========== ENCABEZADO ========== -->
+  <header class="header">
+    <span class="header-icon">💡</span>
+    <h1>Innovación Pública con Conocimiento</h1>
+    <p class="subtitulo">Transformando la Función Pública en Colombia</p>
+    <span class="badge-mipg">MIPG Versión 7 · 2026</span>
+  </header>
+
+  <!-- ========== SECCIÓN 1: CONTEXTO ========== -->
+  <section class="seccion s-contexto">
+    <div class="seccion-titulo">
+      <span class="num">1</span>
+      <h2>Contexto de la Innovación</h2>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Tipo de innovación: Organizacional con enfoque social</h3>
+      <p>La innovación pública en Colombia se enmarca en la <strong>sociedad del conocimiento</strong>, donde el saber es el recurso principal para impulsar el desarrollo. La innovación organizacional busca transformar procesos, estructuras y cultura de las entidades públicas para generar <strong>valor público</strong>.</p>
+    </div>
+
+    <div class="card morado">
+      <h3>📘 MIPG Versión 7 (2026) – Dimensión 5</h3>
+      <p>El Modelo Integrado de Planeación y Gestión establece <strong>6 dimensiones operativas</strong>. La <strong>Dimensión 5: Gestión del Conocimiento, la Innovación y la Memoria Pública</strong> orienta la generación, organización, preservación, transferencia y uso estratégico del conocimiento institucional.</p>
+    </div>
+
+    <div class="grid-4">
+      <div class="dato-destacado">
+        <span class="valor">6</span>
+        <span class="etiqueta">Dimensiones MIPG v7</span>
+      </div>
+      <div class="dato-destacado">
+        <span class="valor">2</span>
+        <span class="etiqueta">Políticas de la Dimensión 5</span>
+      </div>
+      <div class="dato-destacado">
+        <span class="valor">3</span>
+        <span class="etiqueta">Ejes de la Política GCI</span>
+      </div>
+      <div class="dato-destacado">
+        <span class="valor">4</span>
+        <span class="etiqueta">Niveles de capacidad</span>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top: 15px;">
+      <div class="eje eje-1">
+        <h4><span class="eje-icon">📊</span> Eje 1</h4>
+        <p><strong>Herramientas de apropiación y analítica pública</strong></p>
+        <p style="font-size:0.78em; margin-top:5px;">Datos → Información → Conocimiento</p>
+      </div>
+      <div class="eje eje-2">
+        <h4><span class="eje-icon">💡</span> Eje 2</h4>
+        <p><strong>Saber innovar para la vida</strong></p>
+        <p style="font-size:0.78em; margin-top:5px;">Ideación · Investigación · Experimentación · Innovación</p>
+      </div>
+      <div class="eje eje-3">
+        <h4><span class="eje-icon">🔄</span> Eje 3</h4>
+        <p><strong>Cultura de compartir, comunicar y transformar</strong></p>
+        <p style="font-size:0.78em; margin-top:5px;">Capacidades · Aprendizaje · Apropiación</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 15px;">
+      <h3>📋 Políticas que integran la Dimensión 5</h3>
+      <p>
+        <span class="badge badge-azul">Gestión del Conocimiento y la Innovación</span>
+        <span class="badge badge-azul">Gestión Documental y de Archivos</span>
+      </p>
+      <p style="margin-top: 8px; font-size: 0.85em;">Enfoque <strong>territorial y diferencial</strong> con 4 niveles: mínimo, básico, intermedio y avanzado.</p>
+    </div>
+  </section>
+
+  <!-- ========== SECCIÓN 2: PROBLEMA ========== -->
+  <section class="seccion s-problema">
+    <div class="seccion-titulo">
+      <span class="num">2</span>
+      <h2>Problema Identificado</h2>
+    </div>
+
+    <div class="card rojo">
+      <h3>⚠️ Deficiente gestión del conocimiento y baja capacidad de innovación en entidades públicas territoriales</h3>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <h3 style="font-family:'Montserrat',sans-serif; font-size:0.95em; color:var(--azul-oscuro); margin-bottom:10px;">👥 Actores involucrados</h3>
+        <ul class="lista-estilizada">
+          <li><strong>Servidores públicos</strong> – Gestores del conocimiento institucional</li>
+          <li><strong>Ciudadanía</strong> – Destinataria de los servicios</li>
+          <li><strong>Entidades territoriales</strong> – Implementan la política</li>
+          <li><strong>DAFP</strong> – Ente rector del MIPG</li>
+          <li><strong>Archivo General de la Nación</strong> – Líder de gestión documental</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-family:'Montserrat',sans-serif; font-size:0.95em; color:var(--azul-oscuro); margin-bottom:10px;">🔍 Causas principales</h3>
+        <ul class="lista-estilizada">
+          <li>Débil cultura de documentación</li>
+          <li>Alta rotación de personal (fuga de conocimiento)</li>
+          <li>Escasa articulación entre áreas</li>
+          <li>Limitada formación en innovación</li>
+          <li>Falta de incentivos para experimentar</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 15px;">
+      <h3 style="font-family:'Montserrat',sans-serif; font-size:0.95em; color:var(--azul-oscuro); margin-bottom:10px;">💥 Efectos</h3>
+      <div class="grid-3">
+        <div class="dato-destacado" style="border-top-color: var(--rojo);">
+          <span class="valor" style="font-size:1.3em;">📉</span>
+          <span class="etiqueta">Duplicación de esfuerzos</span>
+        </div>
+        <div class="dato-destacado" style="border-top-color: var(--rojo);">
+          <span class="valor" style="font-size:1.3em;">🧠</span>
+          <span class="etiqueta">Pérdida de memoria institucional</span>
+        </div>
+        <div class="dato-destacado" style="border-top-color: var(--rojo);">
+          <span class="valor" style="font-size:1.3em;">😞</span>
+          <span class="etiqueta">Baja confianza ciudadana</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECCIÓN 3: ESTADO DEL ARTE ========== -->
+  <section class="seccion s-estado">
+    <div class="seccion-titulo">
+      <span class="num">3</span>
+      <h2>Estado del Arte</h2>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Concepto</th>
+          <th>Referente teórico</th>
+          <th>Aporte a la propuesta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Sociedad del conocimiento</strong></td>
+          <td>Drucker (1998); DAFP (2026)</td>
+          <td>Contexto donde el saber es el recurso principal</td>
+        </tr>
+        <tr>
+          <td><strong>Innovación pública</strong></td>
+          <td>Vries, Bekkers y Tummers (2016)</td>
+          <td>Tipos y determinantes de la innovación pública</td>
+        </tr>
+        <tr>
+          <td><strong>Gestión del conocimiento</strong></td>
+          <td>Nonaka y Takeuchi (1995)</td>
+          <td>Modelo SECI: tácito ↔ explícito</td>
+        </tr>
+        <tr>
+          <td><strong>Innovación organizacional</strong></td>
+          <td>OECD (2024)</td>
+          <td>Tendencias globales centradas en el ciudadano</td>
+        </tr>
+        <tr>
+          <td><strong>Investigación participativa</strong></td>
+          <td>Rocha Torres (2016)</td>
+          <td>Metodologías participativas para proyectos colectivos</td>
+        </tr>
+        <tr>
+          <td><strong>Cocreación de valor público</strong></td>
+          <td>Skålén y Trischler (2025)</td>
+          <td>Marco de cocreación en servicios públicos</td>
+        </tr>
+        <tr>
+          <td><strong>Memoria pública</strong></td>
+          <td>Archivo General de la Nación (2026)</td>
+          <td>Archivos como soporte del conocimiento</td>
+        </tr>
+        <tr>
+          <td><strong>Analítica pública</strong></td>
+          <td>DAFP (2026)</td>
+          <td>Datos → información → conocimiento estratégico</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="card morado">
+      <h3>📌 Fundamento conceptual clave</h3>
+      <p>El MIPG v7 establece que la dimensión busca <em>"fortalecer las capacidades institucionales para gestionar integralmente el conocimiento, la innovación y la memoria institucional mediante procesos de generación, análisis, organización, preservación, transferencia y apropiación del conocimiento"</em> (DAFP, 2026).</p>
+    </div>
+  </section>
+
+  <!-- ========== SECCIÓN 4: OBJETIVO ========== -->
+  <section class="seccion s-objetivo">
+    <div class="seccion-titulo">
+      <span class="num">4</span>
+      <h2>Objetivo General</h2>
+    </div>
+
+    <div class="card verde" style="text-align:center; padding: 25px;">
+      <p style="font-size: 1.05em; font-weight: 600; color: var(--azul-oscuro); line-height: 1.6;">
+        Fortalecer la <strong>gestión del conocimiento, la innovación y la memoria pública</strong> en una entidad pública territorial colombiana, mediante la implementación de un sistema de gestión del conocimiento y cocreación que permita sistematizar experiencias, fomentar la participación de los servidores públicos, preservar la memoria institucional y mejorar la eficiencia en la prestación de servicios a la ciudadanía, en el marco del <strong>MIPG Versión 7</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== SECCIÓN 5: PROPUESTA ========== -->
+  <section class="seccion s-propuesta">
+    <div class="seccion-titulo">
+      <span class="num">5</span>
+      <h2>Propuesta de Innovación</h2>
+    </div>
+
+    <div class="card naranja" style="text-align:center;">
+      <h3 style="font-size:1.1em;">🌟 "Comunidades de Conocimiento e Innovación para el Fortalecimiento Institucional y la Memoria Pública"</h3>
+    </div>
+
+    <div class="grid-3" style="margin-top: 15px;">
+      <div class="eje eje-1">
+        <h4><span class="eje-icon">📊</span> Eje 1: Apropiación y Analítica</h4>
+        <ul class="lista-estilizada" style="font-size:0.85em;">
+          <li>Identificar y documentar conocimiento</li>
+          <li>Organizar en repositorios digitales</li>
+          <li>Analizar datos para decisiones</li>
+        </ul>
+      </div>
+      <div class="eje eje-2">
+        <h4><span class="eje-icon">💡</span> Eje 2: Saber Innovar</h4>
+        <ul class="lista-estilizada" style="font-size:0.85em;">
+          <li>Idear y cocrear soluciones</li>
+          <li>Experimentar y prototipar</li>
+          <li>Investigar nuevos métodos</li>
+        </ul>
+      </div>
+      <div class="eje eje-3">
+        <h4><span class="eje-icon">🔄</span> Eje 3: Compartir y Transformar</h4>
+        <ul class="lista-estilizada" style="font-size:0.85em;">
+          <li>Compartir lecciones aprendidas</li>
+          <li>Sistematizar y difundir</li>
+          <li>Transferir conocimiento</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Montserrat',sans-serif; font-size:1em; color:var(--azul-oscuro); margin: 20px 0 10px;">⚖️ Valor agregado vs. prácticas tradicionales</h3>
+
+    <div class="comparativa">
+      <div class="tradicional">
+        <h4>❌ Práctica Tradicional</h4>
+        <ul>
+          <li>Capacitación puntual y aislada</li>
+          <li>Conocimiento concentrado en expertos</li>
+          <li>Mejoras impuestas desde arriba</li>
+          <li>Documentación esporádica</li>
+          <li>Resistencia al cambio</li>
+          <li>Pérdida de conocimiento por retiro</li>
+        </ul>
+      </div>
+      <div class="innovadora">
+        <h4>✅ Propuesta Innovadora</h4>
+        <ul>
+          <li>Aprendizaje continuo y colaborativo</li>
+          <li>Conocimiento distribuido y accesible</li>
+          <li>Mejoras cocreadas desde la base</li>
+          <li>Sistematización permanente y digital</li>
+          <li>Cultura de experimentación</li>
+          <li>Transferencia estructurada del saber</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECCIÓN 6: PROCESO DE INNOVACIÓN ========== -->
+  <section class="seccion s-proceso">
+    <div class="seccion-titulo">
+      <span class="num">6</span>
+      <h2>Proceso de Innovación</h2>
+    </div>
+
+    <p style="font-size:0.88em; margin-bottom:15px;">Fases alineadas con los 3 ejes de la Política de Gestión del Conocimiento y la Innovación del <strong>MIPG v7</strong>:</p>
+
+    <div class="proceso-flujo">
+      <div class="fase">
+        <span class="fase-num">1</span>
+        <div class="fase-titulo">Diagnóstico y Planificación</div>
+      </div>
+      <div class="fase">
+        <span class="fase-num">2</span>
+        <div class="fase-titulo">Identificación del Conocimiento</div>
+      </div>
+      <div class="fase">
+        <span class="fase-num">3</span>
+        <div class="fase-titulo">Clasificación y Organización</div>
+      </div>
+      <div class="fase">
+        <span class="fase-num">4</span>
+        <div class="fase-titulo">Análisis e Integración</div>
+      </div>
+      <div class="fase">
+        <span class="fase-num">5</span>
+        <div class="fase-titulo">Ideación</div>
+      </div>
+      <div class="fase">
+        <span class="fase-num">6</span>
+        <div class="fase-titulo">Investigación Aplicada</div>
+      </div>
+      <div class="fase">
+        <span class="fase-num">7</span>
+        <div class="fase-titulo">Experimentación y Prototipado</div>
+      </div>
+      <div class="fase">
+        <span class="fase-num">8</span>
+        <div class="fase-titulo">Innovación e Implementación</div>
+      </div>
+      <div class="fase">
+        <span class="fase-num">9</span>
+        <div class="fase-titulo">Cultura de Compartir</div>
+      </div>
+      <div class="fase">
+        <span class="fase-num">10</span>
+        <div class="fase-titulo">Evaluación y Ajustes</div>
+      </div>
+    </div>
+
+    <div class="card azul" style="margin-top:15px;">
+      <h3>🛠️ Técnicas y metodologías ágiles sugeridas</h3>
+      <p>
+        <span class="badge badge-azul">Design Thinking</span>
+        <span class="badge badge-azul">Innovación Abierta</span>
+        <span class="badge badge-azul">SCAMPER</span>
+        <span class="badge badge-azul">Seis Sombreros</span>
+        <span class="badge badge-azul">Lluvia de Ideas</span>
+        <span class="badge badge-azul">Prototipado</span>
+        <span class="badge badge-azul">Pruebas Piloto</span>
+        <span class="badge badge-azul">Café de Conocimiento</span>
+        <span class="badge badge-azul">Ferias del Conocimiento</span>
+        <span class="badge badge-azul">Cápsulas de Conocimiento</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== SECCIÓN 7: RESULTADOS ========== -->
+  <section class="seccion s-resultados">
+    <div class="seccion-titulo">
+      <span class="num">7</span>
+      <h2>Resultados e Impacto Esperados</h2>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <div class="resultado-item">
+          <span class="icono">⚡</span>
+          <div class="texto">
+            <strong>Eficiencia</strong>
+            Reducción del 30% en tiempos de respuesta
+          </div>
+        </div>
+        <div class="resultado-item">
+          <span class="icono">🎯</span>
+          <div class="texto">
+            <strong>Eficacia</strong>
+            Aumento del 40% en resolución en primer contacto
+          </div>
+        </div>
+        <div class="resultado-item">
+          <span class="icono">📚</span>
+          <div class="texto">
+            <strong>Conocimiento</strong>
+            50 prácticas documentadas en el primer año
+          </div>
+        </div>
+        <div class="resultado-item">
+          <span class="icono">🗄️</span>
+          <div class="texto">
+            <strong>Memoria Pública</strong>
+            100% de documentos críticos preservados
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="resultado-item">
+          <span class="icono">👥</span>
+          <div class="texto">
+            <strong>Participación</strong>
+            60% de servidores en comunidades de práctica
+          </div>
+        </div>
+        <div class="resultado-item">
+          <span class="icono">💡</span>
+          <div class="texto">
+            <strong>Innovación</strong>
+            3 soluciones innovadoras validadas al año
+          </div>
+        </div>
+        <div class="resultado-item">
+          <span class="icono">🤝</span>
+          <div class="texto">
+            <strong>Confianza</strong>
+            Mejora en percepción ciudadana
+          </div>
+        </div>
+        <div class="resultado-item">
+          <span class="icono">📊</span>
+          <div class="texto">
+            <strong>Analítica</strong>
+            Decisiones basadas en evidencia en 5 procesos
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card verde" style="margin-top:15px;">
+      <h3>🇨🇴 Aporte al contexto colombiano</h3>
+      <p>La propuesta se alinea con el <strong>Plan Nacional de Desarrollo 2022-2026 "Colombia, Potencia Mundial de la Vida"</strong> y con el <strong>MIPG v7</strong>, contribuyendo a: gestión documental integral, entornos que fomentan la innovación, acceso y aprovechamiento de la información, transformación digital, difusión de prácticas significativas, alianzas estratégicas y memoria institucional para la transparencia y garantía de derechos.</p>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER: DATOS DEL ESTUDIANTE ========== -->
+  <footer class="footer-datos">
+    <h3>📋 Datos del Estudiante</h3>
+    <div class="datos-grid">
+      <div>
+        <span class="label">Título</span>
+        <span class="value">Innovación Pública con Conocimiento</span>
+      </div>
+      <div>
+        <span class="label">Nombre</span>
+        <span class="value">Karen Dayana Vera García</span>
+      </div>
+      <div>
+        <span class="label">Curso</span>
+        <span class="value">Innovación y Gestión del Conocimiento</span>
+      </div>
+      <div>
+        <span class="label">Semana</span>
+        <span class="value">3</span>
+      </div>
+      <div>
+        <span class="label">Profesor</span>
+        <span class="value">Viviana Andrea Cicery Ramos</span>
+      </div>
+      <div>
+        <span class="label">Fecha</span>
+        <span class="value">Septiembre 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== REFERENCIAS ========== -->
+  <div class="referencias">
+    <h4>📚 Referencias</h4>
+    <p>Archivo General de la Nación. (2026). <em>Modelo de Gestión Documental y Administración de Archivos (MGDA)</em>. AGN.</p>
+    <p>Departamento Administrativo de la Función Pública. (2026). <em>Manual Operativo del Modelo Integrado de Planeación y Gestión – MIPG, Versión 7</em>. DAFP.</p>
+    <p>Departamento Administrativo de la Función Pública. (2020). <em>Guía para la implementación de la gestión del conocimiento y la innovación en el marco del MIPG</em>. DAFP.</p>
+    <p>Hernanz Moral, J. A. et al. (2011). La construcción del conocimiento y las condiciones para la innovación. En <em>Innovación y dinámicas sociales en la era del conocimiento</em> (pp. 16-64). Plaza y Valdés Editores.</p>
+    <p>Montero Muñoz, S. (2021). <em>Repensando el desarrollo económico local desde Colombia</em> (pp. 9-54). Ediciones Uniandes.</p>
+    <p>Nonaka, I. y Takeuchi, H. (1995). <em>The Knowledge-Creating Company</em>. Oxford University Press.</p>
+    <p>OECD. (2024). <em>Global trends in government innovation 2024: Fostering human-centred public services</em>. OECD Publishing.</p>
+    <p>Rocha Torres, C. A. (2016). Las metodologías participativas más importantes para el desarrollo de proyectos colectivos. En <em>La investigación acción participativa</em> (pp. 83-107). UNIMINUTO.</p>
+    <p>Skålén, P. y Trischler, J. (2025). Public services as practices. <em>Public Management Review</em>, 27(9), 2194-2213.</p>
+    <p>Vries, H., Bekkers, V., y Tummers, L. G. (2016). Innovación en el sector público. <em>Public Administration</em>, 94(1), 146-166.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
